@@ -1,0 +1,38 @@
+@use './normalize.scss';
+
+.theme-dark {
+  --win-menu-item-bg-color: #333333;
+  --win-menu-item-padding: 14px 10px 14px 14px;
+  --win-menu-item-border-radius: 4px;
+
+  --win-color: #fff;
+  --win-sub-color: #b4b4b4;
+  --win-font-size-base: 14px;
+  --win-font-size-sub: 12px;
+
+  --win-select-bg-color: #3f3f3f;
+  --win-select-bg-color-hover: #444444;
+  --win-select-padding: 6px 12px;
+  --win-select-border-radius: 4px;
+
+  --win-menu-padding: 0 12px;
+  --win-menu-gap: 6px;
+  --win-menu-title-padding: 10px 0;
+
+  color: var(--win-color);
+  font-size: var(--win-font-size-base);
+}
+
+.theme-light {}
+
+body {
+  background-color: #282828;
+}
+
+h1 {
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}

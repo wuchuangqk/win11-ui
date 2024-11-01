@@ -1,30 +1,28 @@
-<script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+  <div :class="theme">
+    <div>
+      theme:
+      <input type="radio" id="dark" name="theme" value="theme-dark" checked v-model="theme" />
+      <label for="dark">dark</label>
+      <input type="radio" id="light" name="theme" value="theme-light" v-model="theme" />
+      <label for="light">light</label>
+    </div>
+    <Menu title="启动">
+      <Collapse title="默认配置文件" description="单击'+'图标或通过键入绑定时打开的配置文件。">
+        <Select></Select>
+      </Collapse>
+      <Collapse title="在计算机启动时启动" description="登录到windows时自动启动终端">
+        <Select></Select>
+      </Collapse>
+    </Menu>
   </div>
-  <HelloWorld msg="Vite + Vue" />
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
+<script setup lang="ts">
+import { ref } from 'vue';
+import Collapse from './components/collapse/collapse.vue';
+import Select from './components/select/select.vue';
+import Menu from './components/menu/menu.vue';
+
+const theme = ref('theme-dark')
+</script>
