@@ -12,9 +12,10 @@
         <Select></Select>
       </Collapse>
       <Collapse title="在计算机启动时启动" description="登录到windows时自动启动终端">
-        <Select></Select>
+        <Radio v-model="autoStartUp" @change="a" />
       </Collapse>
     </Menu>
+    <div>是否自启：{{ autoStartUp ? '是' : '否' }}</div>
   </div>
 </template>
 
@@ -23,6 +24,12 @@ import { ref } from 'vue';
 import Collapse from './components/collapse/collapse.vue';
 import Select from './components/select/select.vue';
 import Menu from './components/menu/menu.vue';
+import Radio from './components/radio/radio.vue';
 
 const theme = ref('theme-dark')
+const autoStartUp = ref(false)
+const a = (b) => {
+  console.log(b);
+  
+}
 </script>

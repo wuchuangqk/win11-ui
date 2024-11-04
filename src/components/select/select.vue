@@ -1,6 +1,6 @@
 <template>
-  <div ref="selectRef">
-    <div ref="referenceRef" class="win-select" @click="onShow">反对东方东方东方的</div>
+  <div ref="selectRef" class="win-select">
+    <div ref="referenceRef" class="win-select__input" @click="onShow">反对东方东方东方的</div>
     <ul v-show="show" ref="popperRef" class="win-select__popper">
       <li class="win-select__item">森三扽发动</li>
       <li class="win-select__item">森三扽发动</li>
@@ -45,6 +45,11 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 .win-select {
+  cursor: pointer;
+  user-select: none;
+}
+
+.win-select__input {
   display: flex;
   align-items: center;
   justify-content: space-between;
